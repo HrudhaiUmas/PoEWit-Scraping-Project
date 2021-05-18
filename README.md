@@ -1,2 +1,2 @@
 # PoEWit-Scraping-Project
-Using Web Scraping on Cedia.org to extract dealer information that will be transferrred into an excel file. 
+Using Automation and Selenium on Cedia.org to extract dealer information that will be transferrred into an excel file. 
