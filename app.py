@@ -38,12 +38,8 @@ page.click_search_button()
 
 time.sleep(3)
 
-page.count_links()
+print(page.count_links())
 
-for dealer in page.count_links():
-    page.dealer_page()
-    time.sleep(1)
-    page.links
 
 
 

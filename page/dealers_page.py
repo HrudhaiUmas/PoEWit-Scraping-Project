@@ -1,4 +1,5 @@
 from typing import List
+from selenium import webdriver
 from selenium.webdriver.support.ui import Select
 from selenium.webdriver.common.keys import Keys
 
@@ -41,7 +42,12 @@ class DealerPage:
 
 
     def count_links(self):
-        links = self.browser.find_elements_by_css_selector(DealersPageLocators.DEALER_LINKS)
+        links = []
+        containers = self.browser.find_elements_by_css_selector(DealersPageLocators.DEALER_CONTAINERS)
+        for i in range(len(containers)):
+            body = self.browser.find_elements_by_css_selector(f'a#subMainContent_CompaniesGrid_rptResult_HyperLink1_{i}')
+            link = body.get_attribute('href')
+            links.append(link)
         return links
 
     def dealer_page(self):

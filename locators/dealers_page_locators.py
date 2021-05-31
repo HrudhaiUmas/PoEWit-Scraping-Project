@@ -3,7 +3,8 @@ class DealersPageLocators:
    ZIPCODE = 'input#subMainContent_CompaniesGrid_txtZipCode'
    RADIUS = 'select#subMainContent_CompaniesGrid_ddlDistance'
    SEARCH_BUTTON = 'input#subMainContent_CompaniesGrid_cmdSearch'
-   DEALER_LINKS = 'a[href = subMainContent_CompaniesGrid_rptResult_HyperLink1_1'
+   DEALER_CONTAINERS = 'div.findApro.p-4'
+
 
 
 
