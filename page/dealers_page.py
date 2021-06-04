@@ -1,9 +1,9 @@
-from typing import List
 from selenium import webdriver
 from selenium.webdriver.support.ui import Select
-from selenium.webdriver.common.keys import Keys
+
 
 from locators.dealers_page_locators import DealersPageLocators
+from locators.dealers_information_locators import DealerInformation
 from parsers.parsers import PageParser
 
 '''
@@ -43,20 +43,25 @@ class DealerPage:
 
     def count_links(self):
         links = []
-        containers = self.browser.find_elements_by_css_selector(DealersPageLocators.DEALER_CONTAINERS)
-        for i in range(len(containers)):
-            body = self.browser.find_elements_by_css_selector(f'a#subMainContent_CompaniesGrid_rptResult_HyperLink1_{i}')
-            link = body.get_attribute('href')
+        boxes = self.browser.find_elements_by_css_selector(DealersPageLocators.DEALER_CONTAINERS)
+        length = len(boxes)
+        for i in range(length):
+            container = self.browser.find_element_by_css_selector(f'a#subMainContent_CompaniesGrid_rptResult_HyperLink1_{i}')
+            link = container.get_attribute('href')
             links.append(link)
         return links
 
-    def dealer_page(self):
-        element = self.browser.find_element_by_css_selector(DealersPageLocators.DEALER_LINKS)
-        element.click()
-
     @property
-    def links(self):
-        PageParser()
+    def extract_dealer_info(self):
+        dealer_name = self.browser.find_element_by_css_selector(DealerInformation.DEALER_NAME).text
+        address =self.browser.find_element_by_css_selector(DealerInformation.ADDRESS_LINE).text
+        city = self.browser.find_element_by_css_selector(DealerInformation.ADDRESS_CITY).text
+        description = self.browser.find_element_by_css_selector(DealerInformation.DESCRIPTION).text
+        dealer = [dealer_name, address, city, description]
+        return dealer
+
+
+
 
 
 

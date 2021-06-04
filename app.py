@@ -38,7 +38,17 @@ page.click_search_button()
 
 time.sleep(3)
 
-print(page.count_links())
+links = page.count_links()
+data = []
+
+
+for link in links:
+    chrome.get(f'{link}')
+    time.sleep(2)
+    data.append(page.extract_dealer_info)
+    chrome.close()
+
+print(data)
 
 
 
