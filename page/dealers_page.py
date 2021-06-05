@@ -51,14 +51,7 @@ class DealerPage:
             links.append(link)
         return links
 
-    @property
-    def extract_dealer_info(self):
-        dealer_name = self.browser.find_element_by_css_selector(DealerInformation.DEALER_NAME).text
-        address =self.browser.find_element_by_css_selector(DealerInformation.ADDRESS_LINE).text
-        city = self.browser.find_element_by_css_selector(DealerInformation.ADDRESS_CITY).text
-        description = self.browser.find_element_by_css_selector(DealerInformation.DESCRIPTION).text
-        dealer = [dealer_name, address, city, description]
-        return dealer
+
 
 
 

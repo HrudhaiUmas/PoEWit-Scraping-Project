@@ -1,15 +1,10 @@
 '''
-Things to do..
-- make sure to have user enter country, zipcode, etc.-----
-- now need to create loop in parsers so it runs the number of dealers times..
-- click on each link individually -- unpack info
-- write to excel file
+This file uses the chromedriver to gather data from cedia.org
+It returns a list of all the links of the individual dealer pages.
 '''
 
 from selenium import webdriver
-from selenium.webdriver.support.ui import WebDriverWait
 import time
-
 
 
 from page.dealers_page import DealerPage
@@ -38,19 +33,9 @@ page.click_search_button()
 
 time.sleep(3)
 
+
+
 links = page.count_links()
-data = []
-
-
-for link in links:
-    chrome.get(f'{link}')
-    time.sleep(2)
-    data.append(page.extract_dealer_info)
-    chrome.close()
-
-print(data)
-
-
 
 
 

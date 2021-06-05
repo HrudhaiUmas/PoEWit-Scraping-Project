@@ -4,7 +4,6 @@ class DealerInformation:
     ADDRESS_CITY = 'span#subMainContent_CompanyDetails_lblCity1'
     DEALER_WEBSITE = 'span#subMainContent_CompanyDetails_hnlkOfficial'
     DESCRIPTION = 'span#subMainContent_CompanyDetails_lbldescription"]'
-    RETURN_PAGE = 'a.backlink'
 
 
 
