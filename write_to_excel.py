@@ -2,6 +2,8 @@ from selenium import webdriver
 import time
 import os
 from openpyxl import Workbook
+import pandas as pd
+from openpyxl.utils.dataframe import dataframe_to_rows
 
 from links import links
 from parsers.parsers import PageParser
@@ -19,12 +21,14 @@ chrome = webdriver.Chrome(executable_path = '/Users/aidanpak/Compsci/drivers/chr
 #loop iterates through each link.. goes to page.. and extracts info
 for i in links:
     chrome.get(i)
+    time.sleep(2)
     parser=PageParser(chrome)
-    time.sleep(3)
     dealer = parser.extract_dealer_info
     data.append(dealer)
+    time.sleep(1)
 
-
+#converting data to dataframe
+dataframe= pd.DataFrame(data=data)
 
 
 #writing to excel file
@@ -38,7 +42,9 @@ while os.path.exists(file):
 wb = Workbook()
 
 ws = wb.active
-ws.append('Dealer Name', 'Address', 'City', 'Website', 'Description')
+ws.append(['Dealer Name', 'Address', 'City', 'Website', 'Description'])
 
-ws.append(data)
+for r in dataframe_to_rows(dataframe):
+    ws.append(r)
+
 wb.save(filename=file)

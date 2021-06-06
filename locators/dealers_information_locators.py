@@ -3,7 +3,7 @@ class DealerInformation:
     ADDRESS_LINE = 'span#subMainContent_CompanyDetails_lblAddressline1r'
     ADDRESS_CITY = 'span#subMainContent_CompanyDetails_lblCity1'
     DEALER_WEBSITE = 'span#subMainContent_CompanyDetails_hnlkOfficial'
-    DESCRIPTION = 'span#subMainContent_CompanyDetails_lbldescription"]'
+    DESCRIPTION = 'span#subMainContent_CompanyDetails_lbldescription'
 
 
 

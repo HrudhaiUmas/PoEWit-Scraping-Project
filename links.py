@@ -36,6 +36,7 @@ time.sleep(3)
 
 
 links = page.count_links()
+chrome.close()
 
 
 
