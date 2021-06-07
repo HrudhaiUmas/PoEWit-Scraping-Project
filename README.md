@@ -18,3 +18,11 @@ External Files in Pages..
   
 External Files in Parsers..
   parser.py --> scrapes information from each individual dealer page and returns a list object of data
+
+
+
+# Installation 
+pip install selenium 
+pip install pandas
+pip install openpyxl
+pip install beautifulsoup4
