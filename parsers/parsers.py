@@ -14,8 +14,9 @@ class PageParser:
         dealer_name = self.parent.find_element_by_css_selector(DealerInformation.DEALER_NAME).text
         address = self.parent.find_element_by_css_selector(DealerInformation.ADDRESS_LINE).text
         city = self.parent.find_element_by_css_selector(DealerInformation.ADDRESS_CITY).text
-        description = self.parent.find_element_by_css_selector(DealerInformation.DESCRIPTION).text
-        dealer = [dealer_name, address, city, description]
+        site = self.parent.find_element_by_css_selector(DealerInformation.DEALER_WEBSITE)
+        website = site.get_attribute('href')
+        dealer = [dealer_name, address, city, website]
         return dealer
 
 

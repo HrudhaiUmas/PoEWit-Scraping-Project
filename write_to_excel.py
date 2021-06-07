@@ -5,7 +5,7 @@ from openpyxl import Workbook
 import pandas as pd
 from openpyxl.utils.dataframe import dataframe_to_rows
 
-from links import links
+from links import links, country_name, zipcode, radius
 from parsers.parsers import PageParser
 
 '''
@@ -28,23 +28,33 @@ for i in links:
     time.sleep(1)
 
 #converting data to dataframe
-dataframe= pd.DataFrame(data=data)
-
+dataframe= pd.DataFrame(data=data, columns=['Dealer Name', 'Address', 'City', 'Website'])
+print(dataframe)
 
 #writing to excel file
 i=0
-file = f'cedia_dealers.xlsx'
+file = f'cedia_dealers_{country_name}_{zipcode}_{radius.strip()}.xlsx'
 while os.path.exists(file):
     i+=1
-    file= f'cedia_dealers{i}.xlsx'
+    file= f'cedia_dealers{i}_{country_name}_{zipcode}_{radius.strip()}.xlsx'
 
 
 wb = Workbook()
 
 ws = wb.active
-ws.append(['Dealer Name', 'Address', 'City', 'Website', 'Description'])
+ws.column_dimensions['A'].width = 40
+ws.column_dimensions['B'].width = 40
+ws.column_dimensions['C'].width = 40
+ws.column_dimensions['D'].width = 40
+ws.column_dimensions['E'].width = 40
+
+
+
+
+
 
 for r in dataframe_to_rows(dataframe):
     ws.append(r)
 
 wb.save(filename=file)
+chrome.close()
