@@ -20,6 +20,10 @@ country_name = input('Enter desired country name. ')
 zipcode = input('Enter desired zipcode. ')
 radius= input('Enter desired radius. ')
 
+message = '\nScraping Cedia.org please wait....\n'
+
+print(message)
+
 #enter information
 page.select_country(country_name)
 page.zipcode_search(zipcode)
@@ -37,6 +41,7 @@ time.sleep(3)
 
 links = page.count_links()
 chrome.close()
+print('\nNow visiting individual dealer pages....\n')
 
 
 
