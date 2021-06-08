@@ -18,7 +18,7 @@ page = DealerPage(chrome)
 
 country_name = input('Enter desired country name. ')
 zipcode = input('Enter desired zipcode. ')
-radius= input('Enter desired radius. ')
+radius= input('Enter desired radius. (example: 25 Miles, 50 Miles): ')
 
 message = '\nScraping Cedia.org please wait....\n'
 
