@@ -16,7 +16,7 @@ take dictionary and write to excel file
 '''
 
 data=[]
-chrome = webdriver.Chrome(executable_path = '/Users/aidanpak/Compsci/drivers/chromedriver')
+chrome = webdriver.Chrome(executable_path = 'C:/Users/mail_vfmdncr/Compsci/Drivers/chromedriver.exe')
 
 #loop iterates through each link.. goes to page.. and extracts info
 for i in links:
@@ -29,7 +29,7 @@ for i in links:
 
 #converting data to dataframe
 dataframe= pd.DataFrame(data=data, columns=['Dealer Name', 'Address', 'City', 'Website'])
-print(dataframe)
+
 
 #writing to excel file
 i=0

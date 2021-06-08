@@ -12,7 +12,7 @@ from page.dealers_page import DealerPage
 
 
 
-chrome = webdriver.Chrome(executable_path = '/Users/aidanpak/Compsci/drivers/chromedriver')
+chrome = webdriver.Chrome(executable_path = 'C:/Users/mail_vfmdncr/Compsci/Drivers/chromedriver.exe')
 chrome.get('https://cedia.net/find-a-cedia-integrator/')
 page = DealerPage(chrome)
 
