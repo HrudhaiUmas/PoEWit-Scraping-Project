@@ -1,5 +1,5 @@
 '''
-This file uses the chromedriver to gather data from cedia.org
+This file uses the chromedriver to gather data from cedia.org -- MAKE SURE TO PASTE IN PATH OF YOUR CHROME DRIVER INTO chrome VAR
 It returns a list of all the links of the individual dealer pages.
 '''
 
@@ -11,8 +11,8 @@ from page.dealers_page import DealerPage
 
 
 
-
-chrome = webdriver.Chrome(executable_path = 'C:/Users/mail_vfmdncr/Compsci/Drivers/chromedriver.exe')
+#paste correct path to driver
+chrome = webdriver.Chrome(executable_path = 'PASTE YOUR PATH HERE -- ex: /usr/local/bin/chromedriver.exec') 
 chrome.get('https://cedia.net/find-a-cedia-integrator/')
 page = DealerPage(chrome)
 
