@@ -1,0 +1,5 @@
+#In your virtual environemnt run -- pip install -r requirements.txt
+selenium 
+pandas
+openpyxl
+beautifulsoup4
