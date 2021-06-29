@@ -16,7 +16,7 @@ take dictionary and write to excel file
 '''
 
 data=[]
-chrome = webdriver.Chrome(executable_path = 'C:/Users/mail_vfmdncr/Compsci/Drivers/chromedriver.exe')
+chrome = webdriver.Chrome(executable_path = 'PASTE YOUR PATH HERE -- ex: /usr/local/bin/chromedriver.exec')
 
 #loop iterates through each link.. goes to page.. and extracts info
 for i in links:
