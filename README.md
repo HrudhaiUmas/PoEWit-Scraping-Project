@@ -22,10 +22,6 @@ External Files in Parsers..
 
 
 # Installation 
-pip install selenium 
+Make sure to download chromedriver your computer and edit the driver variable in the python scripts. 
+To check out the required packages -- visit requirements.txt
 
-pip install pandas
-
-pip install openpyxl
-
-pip install beautifulsoup4
