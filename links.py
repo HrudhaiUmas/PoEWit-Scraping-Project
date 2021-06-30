@@ -12,13 +12,15 @@ from page.dealers_page import DealerPage
 
 
 #paste correct path to driver
-chrome = webdriver.Chrome(executable_path = 'PASTE YOUR PATH HERE -- ex: /usr/local/bin/chromedriver.exec') 
+chrome = webdriver.Chrome(executable_path = '/Users/aidanpak/Compsci/drivers/chromedriver')
 chrome.get('https://cedia.net/find-a-cedia-integrator/')
 page = DealerPage(chrome)
 
-country_name = input('Enter desired country name. ')
-zipcode = input('Enter desired zipcode. ')
-radius= input('Enter desired radius. (example: 25 Miles, 50 Miles): ')
+
+
+country_name = 'USA'
+zipcode = '0'
+radius= '25 Miles'
 
 message = '\nScraping Cedia.org please wait....\n'
 
