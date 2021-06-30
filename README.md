@@ -6,7 +6,7 @@ Using Selenium and the ChromeDriver to extract dealer information from Cedia.org
 links.py 
   Establishes connection to cedia.org.. scrapes information to get number of dealers in search radius and returns a list item containing all individual dealer pages   href. MAKE SURE TO EDIT CHROMEDRIVER PATH (more details below)
   
-write_to_excel.py 
+write_to_excel.py -- MAIN APP TO RUN 
   Iterates through each link returned by links.py.. Will then use parsers.py to scrape data from each page. Will then write data to an excel file. MAKE SURE TO EDIT CHROMEDRIVER PATH HERE TOO.. (more details below)
  
 External Files in locators.. (dealers_page_locators.py and dealers_information_locators.py)
